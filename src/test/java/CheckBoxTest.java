@@ -10,12 +10,11 @@ import java.time.Duration;
 public class CheckBoxTest {
     WebDriver driver = new ChromeDriver();
 
-
     @Test
     public void firstTEst() {
 
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
-        driver.getTitle();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
         WebElement textBox = driver.findElement(By.name("my-text"));
         WebElement submitButton = driver.findElement(By.cssSelector("button"));
