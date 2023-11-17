@@ -5,21 +5,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.sql.Time;
 import java.time.Duration;
 
 public class CheckBoxTest {
     WebDriver driver = new ChromeDriver();
 
     @Test
-    public void firstTEst() {
+    public void firstTEst() throws InterruptedException {
 
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
-
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-        WebElement textBox = driver.findElement(By.name("my-text"));
-        WebElement submitButton = driver.findElement(By.cssSelector("button"));
-        textBox.sendKeys("Selenium");
-        submitButton.click();
+        WebElement checkBox1 = driver.findElement(By.xpath("//input[@id='my-check-1']"));
+        WebElement checKBox2 = driver.findElement(By.xpath("//input[@id='my-check-2']"));
+        checkBox1.click();
+        Thread.sleep(1000);
+
+
+        checkBox1.click();    Thread.sleep(1000);
+        checkBox1.click();   Thread.sleep(1000);
+
+
+
         WebElement message = driver.findElement(By.id("message"));
         System.out.println(message.getText());
         driver.quit();
