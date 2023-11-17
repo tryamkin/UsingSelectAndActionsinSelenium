@@ -12,7 +12,7 @@ public class CheckBoxTest {
 
     @Test
     public void CheckTest() throws InterruptedException {
-
+        driver.manage().window().maximize();
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
         WebElement checkBox1 = driver.findElement(By.xpath("//input[@id='my-check-1']"));
