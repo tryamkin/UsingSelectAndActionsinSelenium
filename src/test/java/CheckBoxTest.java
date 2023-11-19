@@ -1,4 +1,5 @@
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,12 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class CheckBoxTest {
+
     WebDriver driver = new ChromeDriver();
+
+    public void setUp(){
+        WebDriverManager.chromedriver().setup();
+    }
 
     @Test
     public void CheckTest() throws InterruptedException {
